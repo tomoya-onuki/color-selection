@@ -1,0 +1,62 @@
+html{
+	scroll-behavior: smooth;
+}
+
+hr{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+/*リンクの色はなし*/
+a {
+	text-decoration: none;
+	color:#4f4f4f
+}
+a:hover {
+	background-color :#4f4f4f;
+	color:#ffffff
+}
+
+
+/*各タイトルの設定*/
+h1{
+	/* margin-left: 5%; */
+	font-family: "Arial", 'ヒラギノ角ゴ Pro W6',  "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic";
+	color: #000000;
+}
+
+h2{
+	font-family: "Arial", 'ヒラギノ角ゴ Pro W3',  "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic";
+	color: #ffffff;
+}
+
+/*本文のレイアウト指定*/
+body{
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-bottom: 50px;
+	color: #4f4f4f;
+
+	font-family: 'ヒラギノ角ゴ Pro W3';
+	font-size: 100%;
+}
+
+
+.title-box {
+ /* margin: 2em auto; */
+ margin-top:50px;
+ margin-left: 0%;
+ padding-left: 10px;
+ padding-top: 2px;
+ padding-bottom: 2px;
+ width: 100%;
+ background-color: #255daa; /* 背景色 */
+ border: none; /* 枠線 */
+}
+
+.done {
+		color: #2f2f2f;
+}
+.todo {
+		color: #afafaf;
+}
