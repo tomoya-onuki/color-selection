@@ -25,9 +25,10 @@ $pdo = new PDO($dsn, $url['user'], $url['pass']);
 			echo $colors['color01'];
 			echo $colors['color02'];
 			echo $colors['color03'];
+			echo "<br>";
 		}
 		?>
-		
+
 		<center>
 			<!-- フッター -->
       <div style="font-size: 70%; margin-top:30px; margin-bottom:80px;">
