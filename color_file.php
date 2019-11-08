@@ -16,7 +16,6 @@ $stmt->execute();
 
 // データをcolor変数に格納
 $i = 0;
-
 while ($colors = $stmt -> fetch(PDO::FETCH_ASSOC)) {
 	// $color[$i][0] = $colors['color01'];
 	// $color[$i][1] = $colors['color02'];
@@ -57,8 +56,15 @@ while ($colors = $stmt -> fetch(PDO::FETCH_ASSOC)) {
 
 		var w = 100, h = 100;
 
-		ctx.fillStyle = "#f4f4f4";
-		ctx.fillRect(0,10, w, h);
+		for (var i = 0; i < array.length; i++) {
+			array[i]
+		}
+		ctx.fillStyle = "<?php echo $colors['color01']; ?>";
+		ctx.fillRect(0, 10, w, h);
+		ctx.fillStyle = "<?php echo $colors['color02']; ?>";
+		ctx.fillRect(w+2, 10, w, h);
+		ctx.fillStyle = "<?php echo $colors['color03']; ?>";
+		ctx.fillRect(w+w+4, 10, w, h);
 		</script>
 
 

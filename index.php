@@ -38,6 +38,14 @@
       <!-- 保存の通知 --><script type="text/javascript" src="./js/save_notfy.js"></script>
       <!-- ここまで -->
 
+      <div>
+      <?php
+      echo "<h1>cookie</h1>";
+      echo $_COOKIE["color0"];
+      echo $_COOKIE["color1"];
+      echo $_COOKIE["color2"];
+      ?>
+      </div>
 
       <!-- フッター -->
       <div style="font-size: 70%; margin-top:30px; margin-bottom:80px;">
