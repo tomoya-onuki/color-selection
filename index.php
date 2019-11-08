@@ -27,8 +27,7 @@
 
       <!-- 送信フォーム -->
       <div>
-      	<form action="save_color.php" method="post">
-      	<!-- <form action="save_color.php" method="post" id="AjaxForm"> -->
+      	<form action="save_color.php" method="post" id="AjaxForm">
       		<input type="hidden" name="color01" value="#f4f4f4">
       		<input type="hidden" name="color02" value="#f4f4f4">
       		<input type="hidden" name="color03" value="#f4f4f4">

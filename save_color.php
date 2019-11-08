@@ -5,7 +5,6 @@ $url = parse_url(getenv('DATABASE_URL'));
 $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'], 1));
 $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
-var_dump($_POST);
 
 if($_POST['color01'] && $_POST['color02'] && $_POST['color03']){ // POST値がある時
 
@@ -13,11 +12,8 @@ if($_POST['color01'] && $_POST['color02'] && $_POST['color03']){ // POST値が�
 	$stmt->bindParam(':color01', $_POST['color01'], PDO::PARAM_STR);
 	$stmt->bindParam(':color02', $_POST['color02'], PDO::PARAM_STR);
 	$stmt->bindParam(':color03', $_POST['color03'], PDO::PARAM_STR);
-	var_dump($stmt);
 	$stmt->execute();
 
-} else {
-	echo "hoge";
 }
 
 ?>
