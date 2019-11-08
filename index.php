@@ -28,9 +28,6 @@
       <!-- 送信フォーム -->
       <div>
       	<form action="save_color.php" method="post" id="AjaxForm">
-      		<input type="hidden" name="color01" value="#f4f4f4">
-      		<input type="hidden" name="color02" value="#f4f4f4">
-      		<input type="hidden" name="color03" value="#f4f4f4">
       		<input type="submit" id="save" class="button" value="色を保存する" >
       	</form>
       </div>
@@ -38,14 +35,7 @@
       <!-- 保存の通知 --><script type="text/javascript" src="./js/save_notfy.js"></script>
       <!-- ここまで -->
 
-      <div>
-      <?php
-      echo "<h1>cookie</h1>";
-      echo $_COOKIE["color0"];
-      echo $_COOKIE["color1"];
-      echo $_COOKIE["color2"];
-      ?>
-      </div>
+
 
       <!-- フッター -->
       <div style="font-size: 70%; margin-top:30px; margin-bottom:80px;">
