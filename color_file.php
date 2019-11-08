@@ -1,13 +1,13 @@
 <?php
-// echo 'START';
+echo 'START';
 // データベースに接続
 $url = parse_url(getenv('DATABASE_URL'));
 $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'], 1));
 $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
-function h($str) {
-    return htmlspecialchars($str, ENT_QUOTES, 'UTF=8');
-}
+// function h($str) {
+//     return htmlspecialchars($str, ENT_QUOTES, 'UTF=8');
+// }
 
 
 // データ取得
