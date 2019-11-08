@@ -16,11 +16,15 @@ $stmt->execute();
 
 // データをcolor変数に格納
 $i = 0;
+
 while ($colors = $stmt -> fetch(PDO::FETCH_ASSOC)) {
-	$color[$i][0] = $colors['color01'];
-	$color[$i][1] = $colors['color02'];
-	$color[$i][2] = $colors['color03'];
-	$i+=1;
+	// $color[$i][0] = $colors['color01'];
+	// $color[$i][1] = $colors['color02'];
+	// $color[$i][2] = $colors['color03'];
+	// $i+=1;
+	echo $colors['color01'];
+	echo $colors['color02'];
+	echo $colors['color03'];
 }
 ?>
 
