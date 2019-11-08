@@ -54,7 +54,10 @@ body{
 
 .color_file_box {
 	width: 100px;
-	height: 100px;
+	height: 50px;
 	border: solid thin #000000;
 	display: inline-block;
+	margin-bottom: 20px;
+	padding-top: 10px;
+	text-align: center;
 }
