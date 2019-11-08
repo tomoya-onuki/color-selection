@@ -7,12 +7,12 @@ $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
 var_dump($_POST);
 
-if($_POST['color_01'] && $_POST['color_02'] && $_POST['color_03']){ // POST値がある時
+if($_POST['color01'] && $_POST['color02'] && $_POST['color03']){ // POST値がある時
 
 	$stmt = $pdo->prepare('INSERT INTO color_tb (color01, color02, color03) VALUES(:color01, :color02, :color03)');
-	$stmt->bindParam(':color01', $_POST['color_01'], PDO::PARAM_STR);
-	$stmt->bindParam(':color02', $_POST['color_02'], PDO::PARAM_STR);
-	$stmt->bindParam(':color03', $_POST['color_03'], PDO::PARAM_STR);
+	$stmt->bindParam(':color01', $_POST['color01'], PDO::PARAM_STR);
+	$stmt->bindParam(':color02', $_POST['color02'], PDO::PARAM_STR);
+	$stmt->bindParam(':color03', $_POST['color03'], PDO::PARAM_STR);
 	var_dump($stmt);
 	$stmt->execute();
 
