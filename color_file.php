@@ -5,17 +5,7 @@ $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'], 1))
 $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
 // データ取得
-$stmt = $pdo->prepare('SELECT * FROM color_tb');
-$stmt->execute();
 
-// データをcolor変数に格納
-$i = 0;
-while ($colors = $stmt -> fetch(PDO::FETCH_ASSOC)) {
-	echo $colors['color01'];
-	echo $colors['color02'];
-	echo $colors['color03'];
-	echo "<br>";
-}
 ?>
 
 <!DOCTYPE html>
@@ -32,13 +22,18 @@ while ($colors = $stmt -> fetch(PDO::FETCH_ASSOC)) {
 	<body>
 
 		<?php
-		$col = "#ff0000";
+		$stmt = $pdo->prepare('SELECT * FROM color_tb');
+		$stmt->execute();
+
+		// データをcolor変数に格納
+		$i = 0;
+		while ($colors = $stmt -> fetch(PDO::FETCH_ASSOC)) {
+			echo '<div class="color_file_box" style="background-color:'.$colors['color01'].'"></div>';
+			echo '<div class="color_file_box" style="background-color:'.$colors['color02'].'"></div>';
+			echo '<div class="color_file_box" style="background-color:'.$colors['color03'].'"></div>';
+		}
 		?>
-		<div class="color_file_box" style="background-color:<?php echo $col;?>"></div>
-		<?php
-		echo '<div class="color_file_box" style="background-color:#00ff00"></div>';
-		?>
-		<div class="color_file_box"></div>
+
 
 
 		<center>
