@@ -28,9 +28,9 @@ $pdo = new PDO($dsn, $url['user'], $url['pass']);
 		// データをcolor変数に格納
 		$i = 0;
 		while ($colors = $stmt -> fetch(PDO::FETCH_ASSOC)) {
-			echo '<div class="color_file_box" style="background-color:'.$colors['color01'].'"></div>';
-			echo '<div class="color_file_box" style="background-color:'.$colors['color02'].'"></div>';
-			echo '<div class="color_file_box" style="background-color:'.$colors['color03'].'"></div>';
+			echo '<div class="color_file_box" style="background-color:'.$colors['color01'].'">'.$colors['color01'].'</div>';
+			echo '<div class="color_file_box" style="background-color:'.$colors['color02'].'">'.$colors['color02'].'</div>';
+			echo '<div class="color_file_box" style="background-color:'.$colors['color03'].'">'.$colors['color03'].'</div>';
 		}
 		?>
 
