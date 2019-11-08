@@ -56,13 +56,9 @@ while ($colors = $stmt -> fetch(PDO::FETCH_ASSOC)) {
 
 
 		var w = 100, h = 100;
-		ctx.fillStyle = <?php echo $colors['color01']; ?>;
-		ctx.fillRect(0,   <?php echo str( ($i+1)*h) ) ?>, w, h);
-		ctx.fillStyle = <?php echo $colors['color02']; ?>;
-		ctx.fillRect(w,   <?php echo str( ($i+1)*h) ) ?>, w, h);
-		ctx.fillStyle = <?php echo $colors['color03']; ?>;
-		ctx.fillRect(w*2, <?php echo str( ($i+1)*h) ) ?>, w, h);
 
+		ctx.fillStyle = "#f4f4f4";
+		ctx.fillRect(0,10, w, h);
 		</script>
 
 
