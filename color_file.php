@@ -10,7 +10,18 @@ function h($str) {
 }
 
 
+// データ取得
+$stmt = $pdo->prepare('SELECT * FROM color_tb');
+$stmt->execute();
 
+// データをcolor変数に格納
+var $i = 0;
+while ($colors = $stmt -> fetch(PDO::FETCH_ASSOC)) {
+	$color[$i][0] = $colors['color01'];
+	$color[$i][1] = $colors['color02'];
+	$color[$i][2] = $colors['color03'];
+	$i+=1;
+}
 ?>
 
 <!DOCTYPE html>
@@ -38,20 +49,7 @@ function h($str) {
 		document.getElementById("container").appendChild(cvs); // l2のdivに配置する
 		var ctx = cvs.getContext("2d"); // canvasに描画するためのオブジェクト
 
-		<?php
-		// データ取得
-		$stmt = $pdo->prepare('SELECT * FROM color_tb');
-		$stmt->execute();
 
-		// データをcolor変数に格納
-		var $i = 0;
-		while ($colors = $stmt -> fetch(PDO::FETCH_ASSOC)) {
-		//  	$color[$i][0] = $colors['color01'];
-		//  	$color[$i][1] = $colors['color02'];
-		//  	$color[$i][2] = $colors['color03'];
-		// 	$i+=1;
-		// }
-		?>
 
 		var w = 100, h = 100;
 		ctx.fillStyle = <?php echo $colors['color01']; ?>;
@@ -61,7 +59,6 @@ function h($str) {
 		ctx.fillStyle = <?php echo $colors['color03']; ?>;
 		ctx.fillRect(w*2, <?php echo str( ($i+1)*h) ) ?>, w, h);
 
-		<?php } ?>
 		</script>
 
 
