@@ -15,7 +15,7 @@ $stmt = $pdo->prepare('SELECT * FROM color_tb');
 $stmt->execute();
 
 // データをcolor変数に格納
-var $i = 0;
+$i = 0;
 while ($colors = $stmt -> fetch(PDO::FETCH_ASSOC)) {
 	$color[$i][0] = $colors['color01'];
 	$color[$i][1] = $colors['color02'];
