@@ -21,29 +21,31 @@ $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
 	<body>
 
-		<?php
-		$stmt = $pdo->prepare('SELECT * FROM color_tb');
-		$stmt->execute();
-
-		// データをcolor変数に格納
-		$i = 0;
-		while ($colors = $stmt -> fetch(PDO::FETCH_ASSOC)) {
-			echo '<div>';
-			echo '<div class="color_file_box" style="background-color:'.$colors['color01'].'"></div>';
-			echo '<div class="color_file_box" style="background-color:'.$colors['color02'].'"></div>';
-			echo '<div class="color_file_box" style="background-color:'.$colors['color03'].'"></div>';
-			echo '</div>';
-			echo '<div style="margin-bottom:20px;">';
-			echo '<div class="color_name">'.$colors['color01'].'</div>';
-			echo '<div class="color_name">'.$colors['color02'].'</div>';
-			echo '<div class="color_name">'.$colors['color03'].'</div>';
-			echo '</div>';
-		}
-		?>
-
-
-
 		<center>
+			<div class=header>
+				<a href="index.php"><h1>COLOR SELECTION</h1></a>
+			</div>
+
+			<?php
+			$stmt = $pdo->prepare('SELECT * FROM color_tb');
+			$stmt->execute();
+
+			// データをcolor変数に格納
+			$i = 0;
+			while ($colors = $stmt -> fetch(PDO::FETCH_ASSOC)) {
+				echo '<div>';
+				echo '<div class="color_file_box" style="background-color:'.$colors['color01'].'"></div>';
+				echo '<div class="color_file_box" style="background-color:'.$colors['color02'].'"></div>';
+				echo '<div class="color_file_box" style="background-color:'.$colors['color03'].'"></div>';
+				echo '</div>';
+				echo '<div style="margin-top:-5px; margin-bottom:20px;">';
+				echo '<div class="color_name">'.$colors['color01'].'</div>';
+				echo '<div class="color_name">'.$colors['color02'].'</div>';
+				echo '<div class="color_name">'.$colors['color03'].'</div>';
+				echo '</div>';
+			}
+			?>
+
 			<!-- フッター -->
       <div style="font-size: 70%; margin-top:30px; margin-bottom:80px;">
         <p>©️2019 小貫智弥 | Tomoya Onuki</p>

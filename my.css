@@ -51,14 +51,25 @@ body{
 	/* width: 120px; */
 }
 
+.header{
+	height: 100px; /* 高さ */
+	width: 100%; /* 長さ */
+	background-color: #ffffff;
+	position: fixed; /* ヘッダーを固定(これが重要) */
+	top: 0; /* 固定する位置 */
+	left: 0%; /* 固定する位置 */
+	position:　absolute;
+	z-index: 3;
+}
+
 
 .color_file_box {
-	width: 100px;
+	width: 150px;
 	height: 50px;
 	display: inline-block;
 }
 .color_name {
-	width: 100px;
+	width: 150px;
 	display: inline-block;
 	color: #4f4f4f;
 }
