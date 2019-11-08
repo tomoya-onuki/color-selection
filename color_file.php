@@ -1,5 +1,4 @@
 <?php
-echo 'START';
 // データベースに接続
 $url = parse_url(getenv('DATABASE_URL'));
 $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'], 1));
@@ -32,9 +31,13 @@ while ($colors = $stmt -> fetch(PDO::FETCH_ASSOC)) {
 
 	<body>
 
-
-		<div class="color_file_box" style="<?php echo "#ff0000"; ?>"></div>
-		<div class="color_file_box"></div>
+		<?php
+		$col = "#ff0000";
+		?>
+		<div class="color_file_box" style="background-color:<?php echo $col;?>"></div>
+		<?php
+		echo '<div class="color_file_box" style="background-color:#00ff00"></div>';
+		?>
 		<div class="color_file_box"></div>
 
 
