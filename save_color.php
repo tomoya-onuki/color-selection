@@ -5,7 +5,7 @@ $url = parse_url(getenv('DATABASE_URL'));
 $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'], 1));
 $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
-// var_dump($_POST['task']);
+var_dump($_POST['task']);
 
 if($_POST['color_01'] && $_POST['color_02'] && $_POST['color_03']){ // POST値がある時
 
@@ -23,6 +23,4 @@ if($_POST['color_01'] && $_POST['color_02'] && $_POST['color_03']){ // POST値�
 
 }
 
-header('Location: index.php');
-exit;
 ?>
