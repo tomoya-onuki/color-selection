@@ -18,8 +18,11 @@ if($_POST['color_01'] && $_POST['color_02'] && $_POST['color_03']){ // POSTå€¤ã
 	} catch(PDOException $e){
 	  die($e->getMessage());
 	}
-	
+
 } else {
 
 }
+
+header('Location: index.php');
+exit;
 ?>

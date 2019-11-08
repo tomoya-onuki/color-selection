@@ -20,19 +20,19 @@
       <!-- ここまで -->
 
       <!-- みんなの配色リンク -->
-      <div>
-        <a href="./color_file.php" class="button"　>みんなの配色をみる</a>
+      <div >
+        <a href="./color_file.php" class="button">みんなの配色をみる</a>
       </div>
       <!-- ここまで -->
 
       <!-- 送信フォーム -->
-      <div style="float: left;">
+      <div>
       	<form action="save_color.php" method="post">
       	<!-- <form action="save_color.php" method="post" id="AjaxForm"> -->
       		<input type="hidden" name="color01" value="#f4f4f4">
       		<input type="hidden" name="color02" value="#f4f4f4">
       		<input type="hidden" name="color03" value="#f4f4f4">
-      		<input type="submit" id="save" class="button submit" value="色を保存する" >
+      		<input type="submit" id="save" class="button" value="色を保存する" >
       	</form>
       </div>
     	<!-- 送信用のjs --><script type="text/javascript" src="./js/ajax_form.js"></script>

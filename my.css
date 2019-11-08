@@ -48,4 +48,5 @@ body{
   background    : #ffffff;     /* 背景色     */
   color         : #000000;     /* 文字色     */
   border: solid thin #000000;
+	/* width: 120px; */
 }
