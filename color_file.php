@@ -5,11 +5,6 @@ $url = parse_url(getenv('DATABASE_URL'));
 $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'], 1));
 $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
-// function h($str) {
-//     return htmlspecialchars($str, ENT_QUOTES, 'UTF=8');
-// }
-
-
 // データ取得
 $stmt = $pdo->prepare('SELECT * FROM color_tb');
 $stmt->execute();
@@ -17,13 +12,10 @@ $stmt->execute();
 // データをcolor変数に格納
 $i = 0;
 while ($colors = $stmt -> fetch(PDO::FETCH_ASSOC)) {
-	// $color[$i][0] = $colors['color01'];
-	// $color[$i][1] = $colors['color02'];
-	// $color[$i][2] = $colors['color03'];
-	// $i+=1;
 	echo $colors['color01'];
 	echo $colors['color02'];
 	echo $colors['color03'];
+	echo "<br>";
 }
 ?>
 
@@ -41,31 +33,9 @@ while ($colors = $stmt -> fetch(PDO::FETCH_ASSOC)) {
 	<body>
 
 
-
-		<div id="container"></div> <!-- canvasを設置するためのdivタグ -->
-		<script type="text/javascript">
-		var cvs = document.createElement("canvas"); // canvasタグの動的生成
-		var width = 800;  // サイズ
-		var height = 400; // サイズ
-		cvs.width = width;
-		cvs.height = height; // サイズの設定
-		document.getElementById("container").appendChild(cvs); // l2のdivに配置する
-		var ctx = cvs.getContext("2d"); // canvasに描画するためのオブジェクト
-
-
-
-		var w = 100, h = 100;
-
-		for (var i = 0; i < array.length; i++) {
-			array[i]
-		}
-		ctx.fillStyle = "<?php echo $colors['color01']; ?>";
-		ctx.fillRect(0, 10, w, h);
-		ctx.fillStyle = "<?php echo $colors['color02']; ?>";
-		ctx.fillRect(w+2, 10, w, h);
-		ctx.fillStyle = "<?php echo $colors['color03']; ?>";
-		ctx.fillRect(w+w+4, 10, w, h);
-		</script>
+		<div class="color_file_box" style="<?php echo "#ff0000"; ?>"></div>
+		<div class="color_file_box"></div>
+		<div class="color_file_box"></div>
 
 
 		<center>

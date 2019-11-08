@@ -50,3 +50,11 @@ body{
   border: solid thin #000000;
 	/* width: 120px; */
 }
+
+
+.color_file_box {
+	width: 100px;
+	height: 100px;
+	border: solid thin #000000;
+	display: inline-block;
+}

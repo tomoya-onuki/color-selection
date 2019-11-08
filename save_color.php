@@ -5,12 +5,6 @@ $url = parse_url(getenv('DATABASE_URL'));
 $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'], 1));
 $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
-
-echo "<h1>cookie</h1>";
-echo $_COOKIE["color0"];
-echo $_COOKIE["color1"];
-echo $_COOKIE["color2"];
-
 if($_COOKIE['color0'] && $_COOKIE['color1'] && $_COOKIE['color2']){ // POST値がある時
 
 	$stmt = $pdo->prepare('INSERT INTO color_tb (color01, color02, color03) VALUES(:color01, :color02, :color03)');
