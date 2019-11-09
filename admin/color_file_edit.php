@@ -13,10 +13,7 @@ $pdo = new PDO($dsn, $url['user'], $url['pass']);
 	<head>
 		<meta charset="utf-8">
 		<title>COLOR FILE</title>
-		<link rel="stylesheet" type="text/css" href="./my.css">
-		<script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="https://riversun.github.io/jsframe/jsframe.js"></script>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+		<link rel="stylesheet" type="text/css" href="../my.css">
 	</head>
 
 	<body>
