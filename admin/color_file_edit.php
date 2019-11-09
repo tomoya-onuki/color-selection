@@ -12,7 +12,7 @@ $pdo = new PDO($dsn, $url['user'], $url['pass']);
 <html lang="ja" dir="ltr">
 	<head>
 		<meta charset="utf-8">
-		<title>COLOR FILE</title>
+		<title>管理者画面 | COLOR SELECTION</title>
 		<link rel="stylesheet" type="text/css" href="../my.css">
 	</head>
 
@@ -20,9 +20,9 @@ $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
 		<center>
 			<div class=header>
-				<a href="index.php"><h1>COLOR SELECTION</h1></a>
+				<a href="../index.php"><h1>COLOR SELECTION</h1></a>
 			</div>
-      <h3 style="margin-top:180px;">管理者用画面</h3>
+      <h3 style="margin-top:90px;">管理者用画面</h3>
 
 			<?php
 			$stmt = $pdo->prepare('SELECT * FROM color_tb');
