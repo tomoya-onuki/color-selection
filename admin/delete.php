@@ -5,7 +5,7 @@ $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'], 1))
 $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
 // データ取得
-echo $_GET['id'];
+// echo $_GET['id'];
 
 if ($_GET['id']) {
   $stmt = $pdo->prepare('DELETE FROM color_tb WHERE id = :id');
@@ -13,5 +13,5 @@ if ($_GET['id']) {
 	$stmt->execute();
 }
 
-// header('location: color_file_edit.php');
+header('location: color_file_edit.php');
 ?>

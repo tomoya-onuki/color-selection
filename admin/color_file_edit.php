@@ -22,7 +22,8 @@ $pdo = new PDO($dsn, $url['user'], $url['pass']);
 			<div class=header>
 				<a href="index.php"><h1>COLOR SELECTION</h1></a>
 			</div>
-
+      <h2>管理者用画面</h2>
+      
 			<?php
 			$stmt = $pdo->prepare('SELECT * FROM color_tb');
 			$stmt->execute();
