@@ -26,7 +26,7 @@ $pdo = new PDO($dsn, $url['user'], $url['pass']);
 				<a href="index.php"><h1>COLOR SELECTION</h1></a>
 			</div>
 
-			<span style="margin-top:90px;"></span>
+			<div style="margin-top:90px;"></div>
 
 			<?php
 			$stmt = $pdo->prepare('SELECT * FROM color_tb');
