@@ -22,7 +22,7 @@ $pdo = new PDO($dsn, $url['user'], $url['pass']);
 			<div class=header>
 				<a href="index.php"><h1>COLOR SELECTION</h1></a>
 			</div>
-      <h2 style="margin-top:180px;">管理者用画面</h2>
+      <h3 style="margin-top:180px;">管理者用画面</h3>
 
 			<?php
 			$stmt = $pdo->prepare('SELECT * FROM color_tb');
@@ -31,17 +31,17 @@ $pdo = new PDO($dsn, $url['user'], $url['pass']);
 			// データをcolor変数に格納
 			$i = 0;
 			while ($colors = $stmt -> fetch(PDO::FETCH_ASSOC)) {
-				echo '<div>\n';
-				echo '<div class="color_file_box" style="background-color:'.$colors['color01'].'"></div>\n';
-				echo '<div class="color_file_box" style="background-color:'.$colors['color02'].'"></div>\n';
-				echo '<div class="color_file_box" style="background-color:'.$colors['color03'].'"></div>\n';
-				echo '</div>\n';
-				echo '<div style="margin-top:-5px; margin-bottom:20px;">\n';
-				echo '<div class="color_name">'.$colors['color01'].'</div>\n';
-				echo '<div class="color_name">'.$colors['color02'].'</div>\n';
-				echo '<div class="color_name">'.$colors['color03'].'</div>\n';
-        echo '<a href="delete.php?id='.$colors['id'].'">削除</a>\n';
-				echo '</div>\n';
+				echo '<div>'."\n";
+				echo '<div class="color_file_box" style="background-color:'.$colors['color01'].'"></div>'."\n";
+				echo '<div class="color_file_box" style="background-color:'.$colors['color02'].'"></div>'."\n";
+				echo '<div class="color_file_box" style="background-color:'.$colors['color03'].'"></div>'."\n";
+				echo '</div>'."\n";
+				echo '<div style="margin-top:-5px; margin-bottom:20px;">'."\n";
+				echo '<div class="color_name">'.$colors['color01'].'</div>'."\n";
+				echo '<div class="color_name">'.$colors['color02'].'</div>'."\n";
+				echo '<div class="color_name">'.$colors['color03'].'</div>'."\n";
+        echo '<a href="delete.php?id='.$colors['id'].'">削除</a>'."\n";
+				echo '</div>'."\n";
 			}
 			?>
 
