@@ -1,0 +1,4 @@
+AuthUserFile /app/admin/.htpasswd
+AuthType Basic
+AuthName "Input ID and Password"
+Require valid-user
