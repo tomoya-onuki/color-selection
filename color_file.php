@@ -35,16 +35,16 @@ $pdo = new PDO($dsn, $url['user'], $url['pass']);
 			// データをcolor変数に格納
 			$i = 0;
 			while ($colors = $stmt -> fetch(PDO::FETCH_ASSOC)) {
-				echo '<div>';
-				echo '<div class="color_file_box" style="background-color:'.$colors['color01'].'"></div>';
-				echo '<div class="color_file_box" style="background-color:'.$colors['color02'].'"></div>';
-				echo '<div class="color_file_box" style="background-color:'.$colors['color03'].'"></div>';
-				echo '</div>';
-				echo '<div style="margin-top:-5px; margin-bottom:20px;">';
-				echo '<div class="color_name">'.$colors['color01'].'</div>';
-				echo '<div class="color_name">'.$colors['color02'].'</div>';
-				echo '<div class="color_name">'.$colors['color03'].'</div>';
-				echo '</div>';
+				echo '<div>'."\n";
+				echo '<div class="color_file_box" style="background-color:'.$colors['color01'].'"></div>'."\n";
+				echo '<div class="color_file_box" style="background-color:'.$colors['color02'].'"></div>'."\n";
+				echo '<div class="color_file_box" style="background-color:'.$colors['color03'].'"></div>'."\n";
+				echo '</div>'."\n";
+				echo '<div style="margin-top:-5px; margin-bottom:20px;">'."\n";
+				echo '<div class="color_name">'.$colors['color01'].'</div>'."\n";
+				echo '<div class="color_name">'.$colors['color02'].'</div>'."\n";
+				echo '<div class="color_name">'.$colors['color03'].'</div>'."\n";
+				echo '</div>'."\n";
 			}
 			?>
 
