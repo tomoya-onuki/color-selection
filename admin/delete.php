@@ -13,5 +13,5 @@ if ($_GET['id']) {
 	$stmt->execute();
 }
 
-header('location: color_file_edit.php');
+header('location: index.php');
 ?>
