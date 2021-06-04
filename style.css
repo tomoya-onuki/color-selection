@@ -1,0 +1,100 @@
+#color_scheme {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    margin-top: 30px;
+}
+
+#left_contents {
+    position: relative;
+    margin: 0 auto;
+    float: left;
+}
+
+#right_contents {
+    margin-left: 450px;
+}
+
+#color_palet0 ,
+#color_palet1 ,
+#color_palet2 {
+    /* float: left; */
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 300px;
+    float: none;
+}
+
+#color_palet0 > .color ,
+#color_palet1 > .color ,
+#color_palet2 > .color {
+    background:hsl(0,100%,50%);
+    width: 60px;
+    height: 60px;
+    float: left;
+    margin-right: 10px;
+    box-shadow: 1px 1px 1px 1px #efefef;
+}
+#color_palet0 > .color:hover ,
+#color_palet1 > .color:hover ,
+#color_palet2 > .color:hover {
+    opacity: 0.8;
+}
+
+.label {
+    font-size: 80%;
+}
+
+.ui {
+    margin-bottom: 20px;
+}
+.ui > div > input[type="range"] {
+    width: 200px;
+
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #c7c7c7;
+    height: 2px;
+ 
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      cursor: pointer;
+      position: relative;
+      border: none;
+      width: 12px;
+      height: 12px;
+      display: block;
+      background-color: #262626;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+    }
+}
+
+
+.gradation {
+    width: 200px;
+    height: 30px;
+}
+#lightness > .gradation {
+    background: linear-gradient(90deg, hsl(0,0%,0%) 0%, hsl(0,0%,100%) 100%);
+    /* background-color: -moz-linear-gradient(90deg, hsl(0,0%,0%), hsl(0,0%,100%)); */
+    /* background-color: -webkit-linear-gradient(90deg, hsl(0,0%,0%), hsl(0,0%,100%)); */
+}
+#saturation > .gradation {
+    background: linear-gradient(90deg, hsl(0,0%,50%) 0%, hsl(0,100%,50%) 100%);
+    /* background: -moz-linear-gradient(90deg, hsl(0,0%,50%) 0%, hsl(0,100%,50%) 100%); */
+    /* background: -webkit-linear-gradient(90deg, hsl(0,0%,50%) 0%, hsl(0,100%,50%) 100%); */
+}
+
+
+#hue > .item {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+}
+
+#hue > .item:hover {
+    opacity: 0.8;
+}
