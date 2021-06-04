@@ -28,7 +28,7 @@
 #color_palet0 > .color ,
 #color_palet1 > .color ,
 #color_palet2 > .color {
-    background:hsl(0,100%,50%);
+    background:hsl(0,100%,0%);
     width: 60px;
     height: 60px;
     float: left;
