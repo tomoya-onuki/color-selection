@@ -142,7 +142,7 @@
 
       <!-- フッター -->
       <div style="font-size: 70%; margin-top:30px; margin-bottom:80px;">
-        <p>©️2019-2020 小貫智弥 | Tomoya Onuki</p>
+        <p>(c)2019 - 2021 小貫智弥 | Tomoya Onuki</p>
       </div>
       <!-- ここまで -->
     </div>
