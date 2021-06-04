@@ -129,8 +129,11 @@
 }
 
 .footer {
-    position: absolute;
-    bottom: 20px;
+    /* position: absolute; */
+    /* bottom: 20px; */
+    margin-top: 600px;
+    font-size: 50%;
+    color: #666;
 }
 
 button {
