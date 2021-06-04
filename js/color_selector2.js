@@ -45,6 +45,8 @@ $(function () {
         hsl = getColor( $(this) );
         $('#saturation > input').val(hsl[1]);
         $('#lightness > input').val(hsl[2]);
+        $('#saturation > .label >.value').text(hsl[1]);
+        $('#lightness > .label >.value').text(hsl[2]);
         COLOR_PALET_FLAG = 0;
     });
     $('#color_palet1 > .color').on('click', function () {
@@ -53,6 +55,8 @@ $(function () {
         hsl = getColor( $(this) );
         $('#saturation > input').val(hsl[1]);
         $('#lightness > input').val(hsl[2]);
+        $('#saturation > .label >.value').text(hsl[1]);
+        $('#lightness > .label >.value').text(hsl[2]);
         COLOR_PALET_FLAG = 1;
     });
     $('#color_palet2 > .color').on('click', function () {
@@ -61,6 +65,8 @@ $(function () {
         hsl = getColor( $(this) );
         $('#saturation > input').val(hsl[1]);
         $('#lightness > input').val(hsl[2]);
+        $('#saturation > .label >.value').text(hsl[1]);
+        $('#lightness > .label >.value').text(hsl[2]);
         COLOR_PALET_FLAG = 2;
     });
 });

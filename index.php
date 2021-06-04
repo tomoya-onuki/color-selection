@@ -64,7 +64,7 @@
         <div class="label">
           <div class="hex">#000000</div>
           <div class="rgb">rgb(255, 0, 0)</div>
-          <div class="hsl">hsl(0, 100, )</div>
+          <div class="hsl">hsl(0, 50, 100)</div>
         </div>
       </div>
 
@@ -74,7 +74,7 @@
         <div class="label">
           <div class="hex">#000000</div>
           <div class="rgb">rgb(0, 0, 0)</div>
-          <div class="hsl">hsl(0, 100, 0)</div>
+          <div class="hsl">hsl(0, 50, 100)</div>
         </div>
       </div>
 
@@ -83,7 +83,7 @@
         <div class="label">
           <div class="hex">#000000</div>
           <div class="rgb">rgb(0, 0, 0)</div>
-          <div class="hsl">hsl(0, 100, 0)</div>
+          <div class="hsl">hsl(0, 50, 100)</div>
         </div>
       </div>
     </div>
