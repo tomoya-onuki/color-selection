@@ -129,7 +129,8 @@
 }
 
 .footer {
-    margin-top: 550px;
+    position: absolute;
+    bottom: 20px;
 }
 
 button {
