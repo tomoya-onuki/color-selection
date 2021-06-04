@@ -29,8 +29,8 @@ h2{
 
 /*本文のレイアウト指定*/
 body{
-	margin-left: 5%;
-	margin-right: 5%;
+	/* margin-left: 5%;
+	margin-right: 5%; */
 	margin-bottom: 50px;
 	color: #000000;
 

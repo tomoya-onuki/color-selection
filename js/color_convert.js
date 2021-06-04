@@ -10,12 +10,12 @@ function rgb2hsl(rgb) {
 	var h = 0;
 	var l = (max + min) / 2 * 100;
 	var s = 0;
-	if( (1 - (Math.abs(max + min - 1))) * 100 == 0) {
+	if ((1 - (Math.abs(max + min - 1))) * 100 == 0) {
 		s = 0;
 	} else {
 		s = diff / (1 - (Math.abs(max + min - 1))) * 100;
 	}
-	
+
 
 	switch (min) {
 		case max:
@@ -40,15 +40,15 @@ function rgb2hsl(rgb) {
 	return [h, s, l];
 }
 
-function hsl2rgb ( hsl ) {
-	var h = hsl[0] ;
-	var s = hsl[1] ;
-	var l = hsl[2] ;
+function hsl2rgb(hsl) {
+	var h = hsl[0];
+	var s = hsl[1] / 100;
+	var l = hsl[2] / 100;
 
 	var max = l + ( s * ( 1 - Math.abs( ( 2 * l ) - 1 ) ) / 2 ) ;
 	var min = l - ( s * ( 1 - Math.abs( ( 2 * l ) - 1 ) ) / 2 ) ;
 
-	var rgb = [0, 0, 0];
+	var rgb ;
 	var i = parseInt( h / 60 ) ;
 
 	switch( i ) {
@@ -78,25 +78,23 @@ function hsl2rgb ( hsl ) {
 		break ;
 	}
 
-	// return rgb.map( function ( value ) {
-	// 	return value * 255 ;
-	// } ) ;
 
+	// return rgb.map(v => Math.round(v * 255));
+	rgb = [ rgb[0] * 255, rgb[1] * 2 / 3, rgb[2] * 255 ];
 	return rgb.map(v => Math.round(v));
-	// return [ rgb[0] * 255, rgb[1] * 255, rgb[2] * 255 ];
 }
 
 
 // -----------------------------
 // RGBをコードに変更
 // -----------------------------
-function rgb2hex ( rgb ) {
+function rgb2hex(rgb) {
 	// return "#" + rgb.map( function ( value ) {
 	// 	return ( "0" + value.toString( 16 ) ).slice( -2 ) ;
 	// } ).join( "" ) ;
 	var hex = "#";
 	rgb.forEach(val => {
-		if( parseInt(val, 10) < 10) hex += 0;
+		if (parseInt(val, 10) < 10) hex += 0;
 		hex += parseInt(val, 10).toString(16);
 	});
 	// console.log(rgb+" -> "+hex);
@@ -110,7 +108,13 @@ function rgb2hex ( rgb ) {
 // -----------------------------
 // hsbをrgbに変換する
 // -----------------------------
-function hsv2rgb(h, s, v) {
+function hsv2rgb(hsv) {
+	h = parseInt(hsv[0]);
+	s = parseInt(hsv[1]);
+	v = parseInt(hsv[2]);
+	// console.log(h);
+	// console.log(s);
+	// console.log(v);
 	if (h < 0) {
 		h = h + Math.ceil(-h / 360) * 360;
 	} else if (h > 360) {
@@ -146,9 +150,9 @@ function hsv2rgb(h, s, v) {
 		case 4: r = t; g = p; b = v; break;
 		case 5: r = v; g = p; b = q; break;
 	}
-	rgb[selectingPanelID][0] = parseInt(r);
-	rgb[selectingPanelID][1] = parseInt(g);
-	rgb[selectingPanelID][2] = parseInt(b);
+
+	rgb = [r, g, b];
+	return rgb.map(v => Math.round(v));
 }
 // -----------------------------
 // -----------------------------
@@ -158,10 +162,12 @@ function hsv2rgb(h, s, v) {
 // 16進数からrgbに変換
 // -----------------------------
 function hex2rgb(colorCode) {
-	var rgb = [];
-	rgb[0] = parseInt(colorCode.substr(1, 2), 16);
-	rgb[1] = parseInt(colorCode.substr(3, 2), 16);
-	rgb[2] = parseInt(colorCode.substr(5, 2), 16);
+	var rgb = [0, 0, 0];
+	if (colorCode.length == 7) {
+		rgb[0] = parseInt(colorCode.substr(1, 2), 16);
+		rgb[1] = parseInt(colorCode.substr(3, 2), 16);
+		rgb[2] = parseInt(colorCode.substr(5, 2), 16);
+	}
 	return rgb;
 }
 // -----------------------------
@@ -170,17 +176,56 @@ function hex2rgb(colorCode) {
 
 // -----------------------------
 // -----------------------------
-function rgb2hsb(rgb) {
+function rgb2hsv(rgb) {
 	var hsb = [];
 	var max = Math.max(rgb[0], rgb[1], rgb[2]);
 	var min = Math.min(rgb[0], rgb[1], rgb[2]);
-	if (min == rgb[0]) hsb[0] = 60 * (rgb[2] - rgb[1]) / (max - min) + 180;
-	if (min == rgb[1]) hsb[0] = 60 * (rgb[0] - rgb[2]) / (max - min) + 300;
-	if (min == rgb[2]) hsb[0] = 60 * (rgb[1] - rgb[0]) / (max - min) + 60;
+	if (min == rgb[0]) {
+		hsb[0] = 60 * (rgb[2] - rgb[1]) / (max - min) + 180;
+	} else if (min == rgb[1]) {
+		hsb[0] = 60 * (rgb[0] - rgb[2]) / (max - min) + 300;
+	} else if (min == rgb[2]) {
+		hsb[0] = 60 * (rgb[1] - rgb[0]) / (max - min) + 60;
+	}
+	if (max == min) {
+		hsb[0] = 0;
+	}
 	hsb[2] = max;
 	hsb[1] = max - min;
 
-	return hsb;
+	return hsb.map(v => Math.round(v));
 }
 // -----------------------------
+// -----------------------------
+
+
+
+
+// -----------------------------
+function rgb2cmyk(_rgb) {
+	rgb = _rgb.map(v => v / 255);
+	k = Math.min(1 - rgb[0], 1 - rgb[1], 1 - rgb[2]);
+	if (1 == k) {
+		c = 0;
+		m = 0;
+		y = 0;
+	} else {
+		c = (1 - rgb[0] - k) / (1 - k);
+		m = (1 - rgb[1] - k) / (1 - k);
+		y = (1 - rgb[2] - k) / (1 - k);
+	}
+
+	cmyk = [c, m, y, k];
+	return cmyk.map(v => Math.round(v * 100));
+}
+
+function cmyk2rgb(_cmyk) {
+	var cmyk = _cmyk.map(v => parseInt(v) / 100);
+	r = 1 - Math.min(1, cmyk[0] * (1 - cmyk[3]) + cmyk[3])
+	g = 1 - Math.min(1, cmyk[1] * (1 - cmyk[3]) + cmyk[3])
+	b = 1 - Math.min(1, cmyk[2] * (1 - cmyk[3]) + cmyk[3])
+
+	var rgb = [r, g, b];
+	return rgb.map(v => Math.round(v * 255));
+}
 // -----------------------------
