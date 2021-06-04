@@ -41,37 +41,145 @@ $(function () {
     // カラーパレットの選択
     $('#color_palet0 > .color').on('click', function () {
         $('.color').css('border-radius', '0px');
-        $(this).css('border-radius', '12px');
-        hsl = getColor($(this));
-        $('#saturation > input').val(hsl[1]);
-        $('#lightness > input').val(hsl[2]);
-        $('#saturation > .label >.value').text(hsl[1]);
-        $('#lightness > .label >.value').text(hsl[2]);
-        COLOR_PALET_FLAG = 0;
+
+        if (COLOR_PALET_FLAG != 0) {
+            $(this).css('border-radius', '12px');
+            hsl = getColor($(this));
+            $('#saturation > input').val(hsl[1]);
+            $('#lightness > input').val(hsl[2]);
+            $('#saturation > .label >.value').text(hsl[1]);
+            $('#lightness > .label >.value').text(hsl[2]);
+            COLOR_PALET_FLAG = 0;
+        } else {
+            COLOR_PALET_FLAG = -1;
+        }
+
     });
     $('#color_palet1 > .color').on('click', function () {
         $('.color').css('border-radius', '0px');
-        $(this).css('border-radius', '12px');
-        hsl = getColor($(this));
-        $('#saturation > input').val(hsl[1]);
-        $('#lightness > input').val(hsl[2]);
-        $('#saturation > .label >.value').text(hsl[1]);
-        $('#lightness > .label >.value').text(hsl[2]);
-        COLOR_PALET_FLAG = 1;
+
+        if (COLOR_PALET_FLAG != 1) {
+            $(this).css('border-radius', '12px');
+            hsl = getColor($(this));
+            $('#saturation > input').val(hsl[1]);
+            $('#lightness > input').val(hsl[2]);
+            $('#saturation > .label >.value').text(hsl[1]);
+            $('#lightness > .label >.value').text(hsl[2]);
+            sat_gradation(hsl);
+            COLOR_PALET_FLAG = 1;
+        } else {
+            COLOR_PALET_FLAG = -1;
+        }
+
     });
     $('#color_palet2 > .color').on('click', function () {
         $('.color').css('border-radius', '0px');
-        $(this).css('border-radius', '12px');
-        hsl = getColor($(this));
-        $('#saturation > input').val(hsl[1]);
-        $('#lightness > input').val(hsl[2]);
-        $('#saturation > .label >.value').text(hsl[1]);
-        $('#lightness > .label >.value').text(hsl[2]);
-        COLOR_PALET_FLAG = 2;
+
+        if (COLOR_PALET_FLAG != 2) {
+            $(this).css('border-radius', '12px');
+            hsl = getColor($(this));
+            $('#saturation > input').val(hsl[1]);
+            $('#lightness > input').val(hsl[2]);
+            $('#saturation > .label >.value').text(hsl[1]);
+            $('#lightness > .label >.value').text(hsl[2]);
+            sat_gradation(hsl);
+            COLOR_PALET_FLAG = 2;
+        } else {
+            COLOR_PALET_FLAG = -1;
+        }
     });
 
 
-    copyToClipboard();
+    
+
+
+    $('.text').on('input', function () {
+        var color = "";
+        var _rgb;
+
+        var colorType = $(this).parent().attr('class');
+
+        switch (colorType) {
+            case 'hex':
+                color = $(this).val();
+                _rgb = hex2rgb($(this).val());
+                break;
+            case 'rgb':
+                color = 'rgb(' + $(this).val() + ')';
+                var str = $(this).val().replace(' ', '');
+                _rgb = str.split(',');
+                break;
+            case 'hsl':
+                var str = $(this).val().replace(' ', '');
+                var token0 = str.split(',');
+                color = 'hsl(' + token0[0] + ', ' + token0[1] + '%, ' + token0[2] + '%)';
+                break;
+            case 'hsv':
+                var str = $(this).val().replace(' ', '');
+                var token0 = str.split(',');
+                _rgb = hsv2rgb(token0);
+                color = 'rgb(' + _rgb[0] + ', ' + _rgb[1] + ', ' + _rgb[2] + ')';
+                break;
+            case 'cmyk':
+                var str = $(this).val().replace(' ', '');
+                var token0 = str.split(',');
+                _rgb = cmyk2rgb(token0);
+                color = 'rgb(' + _rgb[0] + ', ' + _rgb[1] + ', ' + t_rgb[2] + ')';
+                break;
+        }
+
+
+        //　先祖のidをチェックして、colorPaletを探す
+        $(this).parents().each(function () {
+            var tmp = String($(this).attr('id'));
+
+            if (tmp.indexOf('color_palet') != -1) {
+                // console.log(color);
+                $(this).find('.color').css('background', color);
+
+
+                switch (colorType) {
+                    case 'hex':
+                        $(this).find('.rgb > .text').val(_rgb);
+                        $(this).find('.hsl > .text').val(rgb2hsl(_rgb));
+                        $(this).find('.hsv > .text').val(rgb2hsv(_rgb));
+                        $(this).find('.cmyk > .text').val(rgb2cmyk(_rgb));
+                        break;
+                    case 'rgb':
+                        $(this).find('.hex > .text').val(rgb2hex(_rgb));
+                        $(this).find('.hsl > .text').val(rgb2hsl(_rgb));
+                        $(this).find('.hsv > .text').val(rgb2hsv(_rgb));
+                        $(this).find('.cmyk > .text').val(rgb2cmyk(_rgb));
+                        break;
+                    case 'hsl':
+                        var str = $(this).find('.color').css('background');
+                        const regexp = /\d+, \d+, \d+/g;
+                        var token = str.match(regexp);
+                        _rgb = token[0].split(', ');
+                        $(this).find('.rgb > .text').val(_rgb);
+                        $(this).find('.hex > .text').val(rgb2hex(_rgb));
+                        $(this).find('.hsv > .text').val(rgb2hsv(_rgb));
+                        $(this).find('.cmyk > .text').val(rgb2cmyk(_rgb));
+                        break;
+                    case 'hsv':
+                        $(this).find('.rgb > .text').val(_rgb);
+                        $(this).find('.hex > .text').val(rgb2hex(_rgb));
+                        $(this).find('.hsl > .text').val(rgb2hsl(_rgb));
+                        $(this).find('.cmyk > .text').val(rgb2cmyk(_rgb));
+                        break;
+                    case 'cmyk':
+                        $(this).find('.rgb > .text').val(_rgb);
+                        $(this).find('.hex > .text').val(rgb2hex(_rgb));
+                        $(this).find('.hsl > .text').val(rgb2hsl(_rgb));
+                        $(this).find('.hsv > .text').val(rgb2hsv(_rgb));
+                        break;
+                }
+            }
+        });
+    });
+
+
+
 });
 
 function setColor(hsl) {
@@ -92,7 +200,7 @@ function setColor(hsl) {
     if (obj != null) {
         var cssHsl = 'hsl(' + hsl[0] + ', ' + hsl[1] + '%, ' + hsl[2] + '%)';
         obj.children('.color').css('background', cssHsl);
-        obj.find('.hsl > .text').text(cssHsl);
+        obj.find('.hsl > .text').val(hsl[0] + ', ' + hsl[1] + ', ' + hsl[2]);
 
         var str = obj.find('.color').css('background');
         // rgbで取得されるのでr,g,bを正規表現で抽出
@@ -100,19 +208,28 @@ function setColor(hsl) {
         var token = str.match(regexp);
 
         // rgb(r,g,b)という形式に整形
-        var cssRgb = 'rgb(' + token[0] + ')';
-        obj.find('.rgb > .text').text(cssRgb);
+        var rgbStr = token[0];
+        obj.find('.rgb > .text').val(rgbStr);
         var rgb = token[0].split(', ');
 
         // hex
         var hex = rgb2hex(rgb);
-        obj.find('.hex > .text').text(hex);
+        obj.find('.hex > .text').val(hex);
+
+        // hsv
+        var hsb = rgb2hsv(rgb);
+        if (hsb[0] == -1) hsb[0] = hsl[0];
+        obj.find('.hsv > .text').val(hsb[0] + ', ' + hsb[1] + ', ' + hsb[2]);
+
+        // CMYK
+        var cmyk = rgb2cmyk(rgb);
+        obj.find('.cmyk > .text').val(cmyk[0] + ', ' + cmyk[1] + ', ' + cmyk[2] + ', ' + cmyk[3]);
 
         // saturationグラデーションを作成
-        $('#saturation > .gradation').css('background', 'linear-gradient(90deg, hsl(0,0%,50%) 0%, ' + cssHsl + ' 100%)');
+        sat_gradation(hsl);
 
         // リンクの生成
-        obj.find('.link').attr('href', "https://www.google.com/search?q="+cssRgb);
+        obj.find('.link').attr('href', "https://www.google.com/search?q=" + 'rgb(' + rgbStr + ')');
     }
 }
 
@@ -123,7 +240,6 @@ function getColor(obj) {
     var token = str.match(regexp);
     var rgb = token[0].split(', ');
     var _hsl = rgb2hsl(rgb);
-    console.log(_hsl);
     return _hsl;
 }
 
@@ -171,18 +287,23 @@ function hue_circle() {
 
 
 function copyToClipboard() {
-    $('.copy_btn').on('click', function() {
-            console.log("click");
-            console.log($(this).parent().find('.text').text());
-            var text = $(this).parent().find('.text').text();
-            text.select();
+    $('.copy_btn').on('click', function () {
+        // console.log("click");
+        // console.log($(this).parent().find('.text').text());
+        var text = $(this).parent().find('.text').text();
+        text.select();
 
-            // 選択しているテキストをクリップボードにコピーする
-            document.execCommand("Copy");
+        // 選択しているテキストをクリップボードにコピーする
+        document.execCommand("Copy");
 
-            // コピーをお知らせする
-            alert("Copy！");
-        
+        // コピーをお知らせする
+        alert("Copy！");
+
     });
 
+}
+
+
+function sat_gradation(hsl) {
+    $('#saturation > .gradation').css('background', 'linear-gradient(90deg, hsl(0,0%,50%) 0%, ' + 'hsl(' + hsl[0] + ', ' + hsl[1] + '%, ' + hsl[2] + '%)' + ' 100%)');
 }
