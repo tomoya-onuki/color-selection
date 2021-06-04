@@ -90,38 +90,35 @@
   </div>
   <!-- ここまで -->
   <center>
-    <!-- <h1>COLOR SELECTION</h1> -->
+    <div class="footer">
 
-    <!-- 配色システムのメイン -->
-    <!-- <div id="container"></div> -->
-    <!-- <script type="text/javascript" src="./js/color_selecter.js"></script> -->
-    <!-- ここまで -->
 
-    <!-- みんなの配色リンク -->
-    <div>
-      <a href="./color_file.php" class="button">みんなの配色をみる</a>
+      <!-- みんなの配色リンク -->
+      <div>
+        <a href="./color_file.php" class="button">みんなの配色をみる</a>
+      </div>
+      <!-- ここまで -->
+
+      <!-- 送信フォーム -->
+      <div>
+        <form action="save_color.php" method="post" id="AjaxForm">
+          <input type="submit" id="save" class="button" value="色を保存する">
+        </form>
+      </div>
+      <!-- 送信用のjs -->
+      <script type="text/javascript" src="./js/ajax_form.js"></script>
+      <!-- 保存の通知 -->
+      <script type="text/javascript" src="./js/save_notfy.js"></script>
+      <!-- ここまで -->
+
+
+
+      <!-- フッター -->
+      <div style="font-size: 70%; margin-top:30px; margin-bottom:80px;">
+        <p>©️2019-2020 小貫智弥 | Tomoya Onuki</p>
+      </div>
+      <!-- ここまで -->
     </div>
-    <!-- ここまで -->
-
-    <!-- 送信フォーム -->
-    <div>
-      <form action="save_color.php" method="post" id="AjaxForm">
-        <input type="submit" id="save" class="button" value="色を保存する">
-      </form>
-    </div>
-    <!-- 送信用のjs -->
-    <script type="text/javascript" src="./js/ajax_form.js"></script>
-    <!-- 保存の通知 -->
-    <script type="text/javascript" src="./js/save_notfy.js"></script>
-    <!-- ここまで -->
-
-
-
-    <!-- フッター -->
-    <div style="font-size: 70%; margin-top:30px; margin-bottom:80px;">
-      <p>©️2019-2020 小貫智弥 | Tomoya Onuki</p>
-    </div>
-    <!-- ここまで -->
 
   </center>
 </body>

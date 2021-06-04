@@ -98,3 +98,7 @@
 #hue > .item:hover {
     opacity: 0.8;
 }
+
+.footer {
+    margin-top: 450px;
+}
