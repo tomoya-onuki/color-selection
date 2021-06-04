@@ -9,7 +9,13 @@ function rgb2hsl(rgb) {
 
 	var h = 0;
 	var l = (max + min) / 2 * 100;
-	var s = diff / (1 - (Math.abs(max + min - 1))) * 100;
+	var s = 0;
+	if( (1 - (Math.abs(max + min - 1))) * 100 == 0) {
+		s = 0;
+	} else {
+		s = diff / (1 - (Math.abs(max + min - 1))) * 100;
+	}
+	
 
 	switch (min) {
 		case max:
@@ -28,7 +34,9 @@ function rgb2hsl(rgb) {
 			h = Math.round((60 * ((g - r) / diff)) + 60);
 			break;
 	}
-
+	h = parseInt(h, 10);
+	s = parseInt(s, 10);
+	l = parseInt(l, 10);
 	return [h, s, l];
 }
 
@@ -83,19 +91,17 @@ function hsl2rgb ( hsl ) {
 // RGBをコードに変更
 // -----------------------------
 function rgb2hex ( rgb ) {
-	return "#" + rgb.map( function ( value ) {
-		return ( "0" + value.toString( 16 ) ).slice( -2 ) ;
-	} ).join( "" ) ;
+	// return "#" + rgb.map( function ( value ) {
+	// 	return ( "0" + value.toString( 16 ) ).slice( -2 ) ;
+	// } ).join( "" ) ;
+	var hex = "#";
+	rgb.forEach(val => {
+		if( parseInt(val, 10) < 10) hex += 0;
+		hex += parseInt(val, 10).toString(16);
+	});
+	// console.log(rgb+" -> "+hex);
+	return hex;
 }
-// function rgb2hex(rgb) {
-// 	selectedColor[selectingPanelID] = "#";        // 初期化
-// 	for (var i = 0; i < 3; i++) {
-// 		var data = rgb[i].toString(16);             // 16進数に変換
-// 		if (data.length < 2) data = "0" + data;        // 0詰め処理
-// 		selectedColor[selectingPanelID] += data;    // カラーコードに変換
-// 	}
-// 	console.log(selectedColor[selectingPanelID]);
-// }
 // -----------------------------
 // -----------------------------
 
