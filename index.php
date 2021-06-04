@@ -94,21 +94,21 @@
 
 
       <!-- みんなの配色リンク -->
-      <div>
+      <!-- <div>
         <a href="./color_file.php" class="button">みんなの配色をみる</a>
-      </div>
+      </div> -->
       <!-- ここまで -->
 
       <!-- 送信フォーム -->
-      <div>
+      <!-- <div>
         <form action="save_color.php" method="post" id="AjaxForm">
           <input type="submit" id="save" class="button" value="色を保存する">
         </form>
-      </div>
+      </div> -->
       <!-- 送信用のjs -->
-      <script type="text/javascript" src="./js/ajax_form.js"></script>
+      <!-- <script type="text/javascript" src="./js/ajax_form.js"></script> -->
       <!-- 保存の通知 -->
-      <script type="text/javascript" src="./js/save_notfy.js"></script>
+      <!-- <script type="text/javascript" src="./js/save_notfy.js"></script> -->
       <!-- ここまで -->
 
 
