@@ -5,6 +5,8 @@
   <meta charset="utf-8">
   <title>COLOR SELECTION</title>
   <link rel="stylesheet" type="text/css" href="./my.css">
+  <link rel="stylesheet" type="text/css" href="./style.css">
+
   <script src="http://code.jquery.com/jquery-latest.js"></script>
   <script src="https://riversun.github.io/jsframe/jsframe.js"></script>
   <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
