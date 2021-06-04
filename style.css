@@ -46,7 +46,7 @@
     font-size: 80%;
 }
 
-#color_palet0 > .label ,
+/* #color_palet0 > .label ,
 #color_palet1 > .label ,
 #color_palet2 > .label {
     float: left;
@@ -62,7 +62,7 @@
 #color_palet1 > .link:hover ,
 #color_palet2 > .link:hover {
     opacity: 0.6;
-}
+} */
 
 .ui {
     margin-bottom: 20px;

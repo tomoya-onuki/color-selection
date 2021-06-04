@@ -72,10 +72,9 @@
 					</div>
 					<div class="hsl">
 						<span class="text"></span>
-						
+						<a class="link" href="" target="_blank"><img src="./img/link.png"></a>
 					</div>
 				</div>
-				<a class="link" href="" target="_blank"><img src="./img/link.png"></a>
 			</div>
 	
 			<div id="color_palet1">
@@ -92,10 +91,9 @@
 					</div>
 					<div class="hsl">
 						<span class="text"></span>
-						
+            <a class="link" href="" target="_blank"><img src="./img/link.png"></a>
 					</div>
 				</div>
-				<a class="link" href="" target="_blank"><img src="./img/link.png"></a>
 			</div>
 	
 			<div id="color_palet2">
@@ -111,10 +109,9 @@
 					</div>
 					<div class="hsl">
 						<span class="text"></span>
-						
+            <a class="link" href="" target="_blank"><img src="./img/link.png"></a>
 					</div>
 				</div>
-				<a class="link" href="" target="_blank"><img src="./img/link.png"></a>
 			</div>
 		</div>
 	</div>
