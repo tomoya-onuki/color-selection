@@ -64,15 +64,15 @@
 				<div class="label">
 					<div class="hex">
 						<span class="text"></span>
-						<button class="copy_btn">copy</button>
+						
 					</div>
 					<div class="rgb">
 						<span class="text"></span>
-						<button class="copy_btn">copy</button>
+						
 					</div>
 					<div class="hsl">
 						<span class="text"></span>
-						<button class="copy_btn">copy</button>
+						
 					</div>
 				</div>
 				<a class="link" href="" target="_blank"><img src="./img/link.png"></a>
@@ -84,15 +84,15 @@
 				<div class="label">
 					<div class="hex">
 						<span class="text"></span>
-						<button class="copy_btn">copy</button>
+						
 					</div>
 					<div class="rgb">
 						<span class="text"></span>
-						<button class="copy_btn">copy</button>
+						
 					</div>
 					<div class="hsl">
 						<span class="text"></span>
-						<button class="copy_btn">copy</button>
+						
 					</div>
 				</div>
 				<a class="link" href="" target="_blank"><img src="./img/link.png"></a>
@@ -103,15 +103,15 @@
 				<div class="label">
 					<div class="hex">
 						<span class="text"></span>
-						<button class="copy_btn">copy</button>
+						
 					</div>
 					<div class="rgb">
 						<span class="text"></span>
-						<button class="copy_btn">copy</button>
+						
 					</div>
 					<div class="hsl">
 						<span class="text"></span>
-						<button class="copy_btn">copy</button>
+						
 					</div>
 				</div>
 				<a class="link" href="" target="_blank"><img src="./img/link.png"></a>
