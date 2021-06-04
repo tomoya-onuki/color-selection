@@ -141,7 +141,7 @@ function init() {
         setColor([h, s, l]);
     }
 
-    COLOR_PALET_FLAG = 0;
+    COLOR_PALET_FLAG = -1;
     return [h, s, l];
 }
 
