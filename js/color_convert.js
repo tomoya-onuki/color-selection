@@ -176,8 +176,9 @@ function hex2rgb(colorCode) {
 
 // -----------------------------
 // -----------------------------
-function rgb2hsv(rgb) {
+function rgb2hsv(_rgb) {
 	var hsb = [];
+	var rgb = _rgb.map(v => v / 255);
 	var max = Math.max(rgb[0], rgb[1], rgb[2]);
 	var min = Math.min(rgb[0], rgb[1], rgb[2]);
 	if (min == rgb[0]) {
@@ -190,8 +191,8 @@ function rgb2hsv(rgb) {
 	if (max == min) {
 		hsb[0] = 0;
 	}
-	hsb[2] = max;
-	hsb[1] = max - min;
+	hsb[2] = max * 100;
+	hsb[1] = (max - min) / max * 100;
 
 	return hsb.map(v => Math.round(v));
 }
