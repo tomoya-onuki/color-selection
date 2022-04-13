@@ -85,7 +85,7 @@
     background-color: #c7c7c7;
     height: 2px;
  
-    &::-webkit-slider-thumb {
+    /* &::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
       cursor: pointer;
@@ -97,7 +97,7 @@
       background-color: #262626;
       border-radius: 50%;
       -webkit-border-radius: 50%;
-    }
+    } */
 }
 
 

@@ -49,6 +49,8 @@ $(function () {
             $('#lightness > input').val(hsl[2]);
             $('#saturation > .label >.value').text(hsl[1]);
             $('#lightness > .label >.value').text(hsl[2]);
+            sat_gradation(hsl);
+            light_gradation(hsl);
             COLOR_PALET_FLAG = 0;
         } else {
             COLOR_PALET_FLAG = -1;
@@ -66,6 +68,7 @@ $(function () {
             $('#saturation > .label >.value').text(hsl[1]);
             $('#lightness > .label >.value').text(hsl[2]);
             sat_gradation(hsl);
+            light_gradation(hsl);
             COLOR_PALET_FLAG = 1;
         } else {
             COLOR_PALET_FLAG = -1;
@@ -83,6 +86,7 @@ $(function () {
             $('#saturation > .label >.value').text(hsl[1]);
             $('#lightness > .label >.value').text(hsl[2]);
             sat_gradation(hsl);
+            light_gradation(hsl);
             COLOR_PALET_FLAG = 2;
         } else {
             COLOR_PALET_FLAG = -1;
@@ -90,7 +94,7 @@ $(function () {
     });
 
 
-    
+
 
 
     $('.text').on('input', function () {
@@ -305,5 +309,13 @@ function copyToClipboard() {
 
 
 function sat_gradation(hsl) {
-    $('#saturation > .gradation').css('background', 'linear-gradient(90deg, hsl(0,0%,50%) 0%, ' + 'hsl(' + hsl[0] + ', ' + hsl[1] + '%, ' + hsl[2] + '%)' + ' 100%)');
+    $('#saturation > .gradation').css({
+        'background': 'linear-gradient(90deg, hsl(' + hsl[0] + ',0%, ' + hsl[2] + '%) 0%, hsl(' + hsl[0] + ', 100%, ' + hsl[2] + '%)' + ' 100%)'
+    });
+}
+
+function light_gradation(hsl) {
+    $('#lightness > .gradation').css({
+        'background': 'linear-gradient(90deg, hsl(' + hsl[0] + ', ' + hsl[1] + '%, 0%) 0%, hsl(' + hsl[0] + ', ' + hsl[1] + '%, 100%) 100 %)'
+    });
 }
