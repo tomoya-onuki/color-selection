@@ -1,0 +1,75 @@
+html{
+	scroll-behavior: smooth;
+}
+
+hr{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+/*リンクの色はなし*/
+a {
+	text-decoration: none;
+}
+a:hover {
+}
+
+
+/*各タイトルの設定*/
+h1{
+	/* margin-left: 5%; */
+	font-family: "Arial", 'ヒラギノ角ゴ Pro W6',  "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic";
+	color: #000000;
+}
+
+h2{
+	font-family: "Arial", 'ヒラギノ角ゴ Pro W3',  "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic";
+	color: #000000;
+}
+
+/*本文のレイアウト指定*/
+body{
+	/* margin-left: 5%;
+	margin-right: 5%; */
+	margin-bottom: 50px;
+	color: #000000;
+
+	font-family: 'ヒラギノ角ゴ Pro W3';
+	font-size: 100%;
+}
+
+
+.button {
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 70%;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  padding       : 5px 5px;   /* 余白       */
+	margin				: 5px 5px;
+  background    : #ffffff;     /* 背景色     */
+  color         : #000000;     /* 文字色     */
+  border: solid thin #000000;
+	/* width: 120px; */
+}
+
+.header{
+	height: 80px; /* 高さ */
+	width: 100%; /* 長さ */
+	background-color: #ffffff;
+	position: fixed; /* ヘッダーを固定(これが重要) */
+	top: 0; /* 固定する位置 */
+	left: 0%; /* 固定する位置 */
+	position:　absolute;
+	z-index: 3;
+}
+
+
+.color_file_box {
+	width: 150px;
+	height: 50px;
+	display: inline-block;
+}
+.color_name {
+	width: 150px;
+	display: inline-block;
+	color: #4f4f4f;
+}

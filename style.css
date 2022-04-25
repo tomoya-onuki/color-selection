@@ -1,0 +1,151 @@
+#color_scheme {
+    position: absolute;
+    left: 50%;
+    transform: translate(-40%,0);
+    margin-top: 30px;
+}
+
+#left_contents {
+    position: relative;
+    margin: 0 auto;
+    float: left;
+}
+
+#right_contents {
+    position: relative;
+    margin-left: 450px;
+}
+
+#color_palet0 ,
+#color_palet1 ,
+#color_palet2 {
+    width: 400px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+#color_palet0 > .color ,
+#color_palet1 > .color ,
+#color_palet2 > .color {
+    background:hsl(0,100%,0%);
+    width: 50px;
+    height: 150px;
+    float: left;
+    margin-right: 15px;
+    box-shadow: 1px 1px 1px 1px #efefef;
+}
+#color_palet0 > .color:hover ,
+#color_palet1 > .color:hover ,
+#color_palet2 > .color:hover {
+    opacity: 0.8;
+}
+
+#color_palet0 > .label,
+#color_palet1 > .label,
+#color_palet2 > .label{
+    height: 150px;
+}
+
+#color_palet0 > .label > div,
+#color_palet1 > .label > div,
+#color_palet2 > .label > div{
+    height: 31px;
+}
+
+
+.type {
+    width: 50px;
+    display: inline-block; _display: inline;
+}
+
+.text {
+    border: solid 1px #c7c7c7;
+    border-radius: 3px;
+    padding: 3px 0px 3px 16px;
+    width: 100px;
+}
+
+.label {
+    font-size: 80%;
+}
+
+
+
+
+.ui {
+    margin-top: 30px;
+    margin-right: 10px;
+    float: left;
+}
+.ui > div > input[type="range"] {
+    width: 190px;
+
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #c7c7c7;
+    height: 2px;
+ 
+    /* &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      cursor: pointer;
+      position: relative;
+      border: none;
+      width: 12px;
+      height: 12px;
+      display: block;
+      background-color: #262626;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+    } */
+}
+
+
+.gradation {
+    width: 190px;
+    height: 30px;
+}
+
+#lightness > .gradation {
+    background: linear-gradient(90deg, hsl(0,0%,0%) 0%, hsl(0,0%,100%) 100%);
+}
+#saturation > .gradation {
+    background: linear-gradient(90deg, hsl(0,0%,50%) 0%, hsl(0,100%,50%) 100%);
+}
+
+#hue {
+    width: 390px;
+    height: 390px;
+}
+
+#hue > .item {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+}
+
+#hue > .item:hover {
+    opacity: 0.8;
+}
+
+.footer {
+    /* position: absolute; */
+    /* bottom: 20px; */
+    margin-top: 600px;
+    font-size: 50%;
+    color: #666;
+}
+
+button {
+    border: none;
+    /* border-bottom: solid 1px #666; */
+    background: #ffffff;
+    color: #666;
+    padding: 0px 2px 2px 2px;
+    margin: 0px;
+    margin-left: 5px;
+}
+button:hover {
+    opacity: 0.6;
+}
